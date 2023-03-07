@@ -2,7 +2,7 @@
 @if (Theme::get('section-name'))
     {!! Theme::partial('breadcrumbs') !!}
 @endif
-<section class="section pt-50 pb-100">
+<section class="section pt-50 pb-100" style="background-color: #F2F6F9">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

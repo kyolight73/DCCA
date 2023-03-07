@@ -13,3 +13,11 @@
         <i class="icon-arrow-up-circle"></i>
     </div>
 </div>
+{{-- @if(!Auth::user()->hasPermission('posts.publish')){
+    <script>
+        $(document).ready(function () {
+            $('option[value="published"]').remove();
+        });
+    </script>
+}
+@endif --}}

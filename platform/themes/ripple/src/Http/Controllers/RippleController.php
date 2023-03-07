@@ -54,4 +54,9 @@ class RippleController extends PublicController
             ->setError()
             ->setMessage(__('No results found, please try with different keywords.'));
     }
+
+    public function newModule()
+    {
+        return view('theme.ripple::views.test.new');
+    }
 }

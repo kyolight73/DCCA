@@ -101,6 +101,30 @@ class HookServiceProvider extends ServiceProvider
                 ],
             ])
             ->setSection([
+                'title' => 'New Module',
+                'desc' => 'just testing',
+                'priority' => 0,
+                'id' => 'opt-new-module',
+                'subsection' => true,
+                'icon' => 'fa fa-home',
+                'fields' => [
+                    [
+                        'id' => 'site_title_module',
+                        'type' => 'mediaImage',
+                        'label' => trans('core/setting::setting.general.site_title'),
+                        'attributes' => [
+                            'name' => 'site_title_module',
+                            'value' => null,
+                            'options' => [
+                                'class' => 'form-control',
+                                'placeholder' => trans('core/setting::setting.general.site_title'),
+                                'data-counter' => 255,
+                            ],
+                        ],
+                    ],
+                ],
+            ])
+            ->setSection([
                 'title' => trans('packages/theme::theme.theme_option_logo'),
                 'desc' => trans('packages/theme::theme.theme_option_logo'),
                 'priority' => 0,

@@ -1,6 +1,6 @@
 @extends('core/base::layouts.base')
 
-@section ('page')
+@section('page')
     @include('core/base::layouts.partials.svg-icon')
 
     <div class="page-wrapper">
@@ -12,8 +12,54 @@
                 <div class="page-sidebar navbar-collapse collapse">
                     <div class="sidebar">
                         <div class="sidebar-content">
-                            <ul class="page-sidebar-menu page-header-fixed {{ session()->get('sidebar-menu-toggle') ? 'page-sidebar-menu-closed' : '' }}" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                            <ul class="page-sidebar-menu page-header-fixed {{ session()->get('sidebar-menu-toggle') ? 'page-sidebar-menu-closed' : '' }}"
+                                data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                                 @include('core/base::layouts.partials.sidebar')
+                                <li class="nav-item " id="cms-core-platform-administration">
+                                    <a href="" class="nav-link nav-toggle">
+                                        <i class="fa fa-user-shield"></i>
+                                        <span class="title">
+                                            New Module
+                                            </span>
+                                         <span class="arrow "></span>         </a>
+                                                <ul class="sub-menu  hidden-ul ">
+                                                                <li class="nav-item " id="cms-core-role-permission">
+                                                    <a href="http://127.0.0.1:99/admin/system/roles" class="nav-link">
+                                                        <i class=""></i>
+                                                        Roles and Permissions
+
+                                                    </a>
+                                                </li>
+                                                                <li class="nav-item " id="cms-core-user">
+                                                    <a href="http://127.0.0.1:99/admin/system/users" class="nav-link">
+                                                        <i class=""></i>
+                                                        Users
+
+                                                    </a>
+                                                </li>
+                                                                <li class="nav-item " id="cms-plugin-audit-log">
+                                                    <a href="http://127.0.0.1:99/admin/audit-logs" class="nav-link">
+                                                        <i class=""></i>
+                                                        Activities Logs
+
+                                                    </a>
+                                                </li>
+                                                                <li class="nav-item " id="cms-plugin-backup">
+                                                    <a href="http://127.0.0.1:99/admin/system/backups" class="nav-link">
+                                                        <i class=""></i>
+                                                        Backups
+
+                                                    </a>
+                                                </li>
+                                                                <li class="nav-item " id="cms-plugin-request-log">
+                                                    <a href="http://127.0.0.1:99/admin/request-logs" class="nav-link">
+                                                        <i class=""></i>
+                                                        Request Logs
+
+                                                    </a>
+                                                </li>
+                                                        </ul>
+                                        </li>
                             </ul>
                         </div>
                     </div>
@@ -21,7 +67,8 @@
             </div>
 
             <div class="page-content-wrapper">
-                <div class="page-content @if (Route::currentRouteName() == 'media.index') rv-media-integrate-wrapper @endif" style="min-height: 100vh">
+                <div class="page-content @if (Route::currentRouteName() == 'media.index') rv-media-integrate-wrapper @endif"
+                    style="min-height: 100vh">
                     {!! Breadcrumbs::render('main', page_title()->getTitle(false)) !!}
                     <div class="clearfix"></div>
                     <div id="main">

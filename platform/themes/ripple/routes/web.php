@@ -1,5 +1,5 @@
 <?php
-
+use Theme\Ripple\Http\Controllers\RippleController;
 // Custom routes
 
 Route::group(['namespace' => 'Theme\Ripple\Http\Controllers', 'middleware' => ['web', 'core']], function () {
@@ -9,6 +9,7 @@ Route::group(['namespace' => 'Theme\Ripple\Http\Controllers', 'middleware' => ['
 
         Route::get('ajax/search', 'RippleController@getSearch')->name('public.ajax.search');
     });
+    Route::get('/new_module',[RippleController::class,'newModule'])->name('module.new');
 });
 
 Theme::routes();
