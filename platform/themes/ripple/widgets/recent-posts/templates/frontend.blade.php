@@ -13,11 +13,17 @@
                                 <h3 class="widget__title">{{ $config['name'] }}</h3>
                             </div>
                             <div class="widget__content">
-                                <ul @if ($sidebar == 'footer_sidebar') class="list list--light list--fadeIn" @endif>
+                                <ul @if ($sidebar == 'footer_sidebar') class="list list--light" @endif>
                                     @foreach ($posts as $post)
                                         <li>
                                             @if ($sidebar == 'footer_sidebar')
-                                                <a href="{{ $post->url }}" title="{{ $post->name }}" data-number-line="2">{!! BaseHelper::clean($post->name) !!}</a>
+                                                <article class="post post__widget clearfix">
+                                                    <div class="post__thumbnail"><img src="{{ $post->image }}" loading="lazy"style="height: 80px ;width: 80px; object-fit: cover"></div>
+                                                    <header class="post__header">
+                                                        <h4 class="post__title"><a href="{{ $post->url }}" title="{{ $post->name }}" data-number-line="2">{!! BaseHelper::clean($post->name) !!}</a></h4>
+                                                        <div class="post__meta"><span class="post__created-at">{{ $post->created_at->translatedFormat('M d, Y') }}</span></div>
+                                                    </header>
+                                                </article>
                                             @else
                                                 <article class="post post__widget clearfix">
                                                     <div class="post__thumbnail"><img src="{{ RvMedia::getImageUrl($post->image, 'thumb', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" loading="lazy">

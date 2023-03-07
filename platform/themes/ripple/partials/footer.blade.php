@@ -1,7 +1,8 @@
 </div>
-<footer class="page-footer bg-dark pt-50">
+<footer class="page-footer pt-50" style="background: #021738 !important;">
     <div class="container">
         <div class="row">
+<<<<<<< Updated upstream
             @if (theme_option('address') ||
                     theme_option('website') ||
                     theme_option('contact_email') ||
@@ -30,11 +31,46 @@
                         </div>
                     </aside>
                 </div>
+=======
+            @if (theme_option('address') || theme_option('website') || theme_option('contact_email') || theme_option('site_description'))
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                <aside class="widget widget--transparent widget__footer widget__about">
+                    <div class="widget__header">
+                        <h3 class="widget__title">{{ __('About us') }}</h3>
+                    </div>
+                    <div class="widget__content footer__social">
+                        <p>{{ theme_option('site_description') }}</p>
+                        <ul class="social social--simple social--widget list--light">
+                            <li>
+                                <a href="https://facebook.com" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>  <span>Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com" target="_blank" title="Twitter">
+                                    <i class="fab fa-twitter"></i>  <span>Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://instagram.com" target="_blank" title="Github">
+                                    <i class="fab fa-instagram"></i>  <span>Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com" target="_blank" title="Linkedin">
+                                    <i class="fab fa-linkedin"></i>  <span>Linkedin</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+>>>>>>> Stashed changes
             @endif
             {!! dynamic_sidebar('footer_sidebar') !!}
         </div>
     </div>
-    <div class="page-footer__bottom">
+    <div class="page-footer__bottom" style="background: #021738">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-6 text-start">
